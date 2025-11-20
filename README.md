@@ -1,8 +1,7 @@
-# SecureVault -- Encrypted Password Manager (Next.js + MongoDB)
+# SecureVault - Encrypted Password Manager (Next.js + MongoDB)
 
 SecureVault is a **client‑side encrypted password manager** built with
-**Next.js 15**, **MongoDB**, **JWT authentication**, and **optional
-Two‑Factor Authentication (2FA)**.\
+**Next.js 15**, **MongoDB** and **JWT authentication**.
 Passwords never leave the client unencrypted --- your vault data is
 encrypted **inside the browser** using AES‑256 before being sent to the
 backend.
@@ -21,14 +20,15 @@ backend.
 
 -   JWT-based authentication stored in secure httpOnly cookies
 -   Login, Register, Logout endpoints
--   2FA via email OTP (Brevo SMTP)
 
 ### 🗄️ **Encrypted Vault Items**
 
-Each vault entry contains: - Title\
-- Username / Email\
-- Password\
-- URL\
+Each vault entry contains: 
+- Title
+- Username
+- Email
+- Password
+- URL
 - Notes
 
 All fields are encrypted client‑side.
@@ -50,16 +50,10 @@ toggle - Exclude look‑alike characters - One‑click copy + auto-refresh
 
 ### 🗑️ CRUD Operations
 
--   Add item\
--   Edit item\
--   Delete item\
+-   Add item
+-   Edit item
+-   Delete item
     (All encrypted)
-
-### 📨 **Email OTP (2FA)**
-
--   Uses **Brevo SMTP**
--   One-time password valid for 10 minutes
--   Custom HTML email templates
 
 ------------------------------------------------------------------------
 
@@ -122,12 +116,6 @@ Create a `.env.local`:
 
     MONGODB_URI=YOUR_MONGO_ATLAS_URI
     JWT_SECRET=YOUR_JWT_SECRET
-    EMAIL_FROM="SecureVault <no-reply@yourdomain.com>"
-    BREVO_SMTP_USER=yourbrevo@email.com
-    BREVO_SMTP_KEY=your_smtp_key
-
-Note: In your actual code the SMTP user & key are placed directly ---
-replace them with env vars.
 
 ------------------------------------------------------------------------
 
@@ -152,63 +140,23 @@ replace them with env vars.
 
 ### What the server **can see**
 
--   Your authenticated user ID\
--   Encrypted vault item content\
+-   Your authenticated user ID
+-   Encrypted vault item content
 -   Metadata timestamps
 
 ### What the server **cannot see**
 
--   Plain title\
--   Plain password\
--   Plain username\
+-   Plain title
+-   Plain password
+-   Plain username
 -   Encryption key
 
 ### Where encryption happens
 
-✔ In browser\
-✖ Never on the server\
+✔ In browser
+✖ Never on the server
 ✖ Never stored in DB unencrypted
 
 ------------------------------------------------------------------------
 
-## 📧 2FA Email OTP
 
-Using Brevo SMTP (`smtp-relay.brevo.com`).
-
-### Email Template
-
--   Clean HTML design
--   OTP valid for 10 minutes
--   Sent using `sendOtpEmail(to, otp)`
-
-------------------------------------------------------------------------
-
-## 🛡️ Recommended Improvements (Optional)
-
--   Add HMAC authentication to encrypted objects\
--   Add hashed title index for fast search\
--   Add trash bin / undo delete\
--   Add attachments (encrypted files)
-
-------------------------------------------------------------------------
-
-## 📝 License
-
-This project is licensed under the **MIT License**.
-
-------------------------------------------------------------------------
-
-## 🙌 Contributing
-
-Pull requests are welcome.\
-Open an issue for feature requests or bug reports.
-
-------------------------------------------------------------------------
-
-## ⭐ If you like this project
-
-Give it a star and share with others!
-
-------------------------------------------------------------------------
-
-Made with ❤️ using Next.js, MongoDB, and secure encryption.
