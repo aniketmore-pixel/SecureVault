@@ -153,9 +153,9 @@ Create a `.env.local`:
 
 ### Where encryption happens
 
-✔ In browser
-✖ Never on the server
-✖ Never stored in DB unencrypted
+- ✔ In browser
+- ✖ Never on the server
+- ✖ Never stored in DB unencrypted
 
 ------------------------------------------------------------------------
 
