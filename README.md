@@ -6,7 +6,7 @@ Passwords never leave the client unencrypted --- your vault data is
 encrypted **inside the browser** using AES‑256 before being sent to the
 backend.
 
-**Watch this demo video -> ** 
+**Watch this demo video ->** 
 
 ------------------------------------------------------------------------
 
